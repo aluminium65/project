@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Voting System</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <a href="{{ url_for('admin_login_page') }}" class="admin-btn">Admin Page</a>
+    <div style="text-align: center;">
+        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="CIPS" height="350">
+        <h2>Enter Your Roll Number</h2>
+    </div>
+    <form action="/login" method="post">
+        <input type="text" name="roll" maxlength="4" required>
+        <input type="submit" value="Login">
+    </form>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <script>alert("{{ messages[0] }}");</script>
+      {% endif %}
+    {% endwith %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
