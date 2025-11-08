@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="text-align:center;">
+    <h1>Voting Statistics</h1>
+    {% for chart in charts %}
+    <img src="{{ url_for('static', filename=chart) }}" alt="Row Chart">
+    {% endfor %}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
