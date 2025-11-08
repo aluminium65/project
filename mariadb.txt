@@ -1,0 +1,68 @@
+CREATE DATABASE voting_app;
+
+USE voting_app;
+
+CREATE TABLE voters (
+    roll_number VARCHAR(4) PRIMARY KEY,
+    has_voted BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE candidates (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    row_number INT,
+    name VARCHAR(100),
+    symbol_path VARCHAR(255),
+    votes INT DEFAULT 0
+);
+
+CREATE TABLE votes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    roll_number VARCHAR(4),
+    candidate_id INT,
+    FOREIGN KEY (candidate_id) REFERENCES candidates(id)
+);
+
+
+
+
+
+INSERT INTO candidates (row_number, name, symbol_path)
+VALUES
+(1, 'Candidate A', 'symbols/candidate1.jpg'),
+(1, 'Candidate B', 'symbols/candidate2.jpg'),
+(2, 'Candidate C', 'symbols/candidate3.jpg'),
+(2, 'Candidate D', 'symbols/candidate4.jpg'),
+(3, 'Candidate E', 'symbols/candidate5.jpg'),
+(3, 'Candidate F', 'symbols/candidate6.jpg');
+
+
+
+
+
+
+
+
+
+CREATE USER 'user'@'your_password' IDENTIFIED BY 'flaskpass';
+GRANT ALL PRIVILEGES ON voting_app.* TO 'flaskuser'@'localhost';
+FLUSH PRIVILEGES;
+
+
+
+
+
+
+
+
+
+USE voting_app;
+
+INSERT INTO voters (roll_number, has_voted)
+VALUES
+('1001', FALSE),
+('1002', FALSE),
+('1003', FALSE),
+('1004', FALSE),
+('1005', FALSE);
+
+
