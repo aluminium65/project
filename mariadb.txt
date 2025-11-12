@@ -3,13 +3,13 @@ CREATE DATABASE voting_app;
 USE voting_app;
 
 CREATE TABLE voters (
-    roll_number VARCHAR(4) PRIMARY KEY,
+    roll_num VARCHAR(4) PRIMARY KEY,
     has_voted BOOLEAN DEFAULT FALSE
 );
 
 CREATE TABLE candidates (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    row_number INT,
+    row_num INT,
     name VARCHAR(100),
     symbol_path VARCHAR(255),
     votes INT DEFAULT 0
@@ -17,7 +17,7 @@ CREATE TABLE candidates (
 
 CREATE TABLE votes (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    roll_number VARCHAR(4),
+    roll_num VARCHAR(4),
     candidate_id INT,
     FOREIGN KEY (candidate_id) REFERENCES candidates(id)
 );
@@ -26,14 +26,17 @@ CREATE TABLE votes (
 
 
 
-INSERT INTO candidates (row_number, name, symbol_path)
+INSERT INTO candidates (row_num, name, symbol_path)
 VALUES
-(1, 'Candidate A', 'symbols/candidate1.jpg'),
-(1, 'Candidate B', 'symbols/candidate2.jpg'),
-(2, 'Candidate C', 'symbols/candidate3.jpg'),
-(2, 'Candidate D', 'symbols/candidate4.jpg'),
-(3, 'Candidate E', 'symbols/candidate5.jpg'),
-(3, 'Candidate F', 'symbols/candidate6.jpg');
+(1, 'Asim Munir', 'symbols/candidate1_row1.jpg'),
+(1, 'Ramzan Chhipa', 'symbols/candidate2_row1.jpg'),
+(2, 'Khawar Baig', 'symbols/candidate3_row1.jpg'),
+(2, 'Altaf Hussein', 'symbols/candidate1_row2.jpg'),
+(3, 'Rutherford', 'symbols/candidate2_row2.jpg'),
+(3, 'Rana Muhammad Iftekhar Hussein Warraich', 'symbols/candidate3_row2.jpg'),
+(3, 'Zohran Mamdani', 'symbols/candidate1_row3.jpg'),
+(3, 'Abraham Lincoln', 'symbols/candidate2_row3.jpg'),
+(3, 'Sir Syed Ahmed Khan', 'symbols/candidate3_row3.jpg');
 
 
 
@@ -57,12 +60,45 @@ FLUSH PRIVILEGES;
 
 USE voting_app;
 
-INSERT INTO voters (roll_number, has_voted)
+INSERT INTO voters (roll_num, has_voted)
 VALUES
 ('1001', FALSE),
 ('1002', FALSE),
 ('1003', FALSE),
 ('1004', FALSE),
-('1005', FALSE);
+('1005', FALSE),
+('1006', FALSE),
+('1007', FALSE),
+('1008', FALSE),
+('1009', FALSE),
+('1010', FALSE),
+('1011', FALSE),
+('1012', FALSE),
+('1013', FALSE),
+('1014', FALSE),
+('1015', FALSE),
+('1016', FALSE),
+('1017', FALSE),
+('1018', FALSE),
+('1019', FALSE),
+('1020', FALSE),
+('1021', FALSE),
+('1022', FALSE),
+('1023', FALSE),
+('1024', FALSE),
+('1025', FALSE),
+('1026', FALSE),
+('1027', FALSE),
+('1028', FALSE),
+('1029', FALSE),
+('1030', FALSE),
+('1031', FALSE),
+('1032', FALSE),
+('1033', FALSE),
+('1034', FALSE),
+('1035', FALSE),
+('1036', FALSE),
+('1037', FALSE);
+
 
 
