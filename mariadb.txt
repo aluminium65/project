@@ -46,16 +46,6 @@ VALUES
 
 
 
-CREATE USER 'user'@'your_password' IDENTIFIED BY 'flaskpass';
-GRANT ALL PRIVILEGES ON voting_app.* TO 'flaskuser'@'localhost';
-FLUSH PRIVILEGES;
-
-
-
-
-
-
-
 
 
 USE voting_app;
