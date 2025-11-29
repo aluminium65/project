@@ -23,9 +23,6 @@ CREATE TABLE votes (
 );
 
 
-
-
-
 INSERT INTO candidates (row_num, name, symbol_path)
 VALUES
 (1, 'Asim Munir', 'symbols/candidate1_row1.jpg'),
