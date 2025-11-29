@@ -44,10 +44,6 @@ VALUES
 
 
 
-
-
-
-
 USE voting_app;
 
 INSERT INTO voters (roll_num, has_voted)
